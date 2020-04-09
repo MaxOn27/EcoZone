@@ -1,0 +1,53 @@
+<div class="main-wrapper">
+  <div class="wrapper">
+    <div class="wrapper-form">
+      <form
+        class="log-in-items"
+        *ngIf="!isLoggedIn"
+        [formGroup]="Form"
+        (ngSubmit)="onSubmit()"
+        novalidate
+      >
+        <mat-form-field appearance="standard" class="log-in-item">
+          <mat-label>E-mail</mat-label>
+          <input
+            formControlName="email"
+            matInput
+            placeholder="E-mail"
+            type="email"
+          />
+          <mat-icon matSuffix> email</mat-icon>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="log-in-item">
+          <input
+            formControlName="password"
+            matInput
+            placeholder="Enter your password"
+            type="password"
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+        <br />
+        <div class="registration-sign-up-wrapper">
+          <div class="buttons">
+            <button mat-stroked-button class="sign-in-button">Sign in</button>
+            <br />
+            <button mat-stroked-button class="registration-button">
+              Sign up
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

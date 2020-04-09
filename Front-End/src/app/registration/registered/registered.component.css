@@ -1,0 +1,16 @@
+.wrapper-registered {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 50px;
+}
+
+.registered {
+  position: absolute;
+  top: 15%;
+  font-family: "Baloo Chettan";
+  font-weight: 500;
+  color: #363636;
+}
+

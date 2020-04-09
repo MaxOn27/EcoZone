@@ -1,0 +1,61 @@
+
+<div class="wrapper">
+  <div class="wrapper-menu">
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <a routerLink="" class="navigation-items brand"
+      ><span class="eco">Eco</span>Zone</a
+    >
+    <a routerLink="adverts-creation" class="navigation-items link"
+      >Place an ad</a
+    >
+    <div *ngIf="!isLoggedIn" class="wrapper-registration_login">
+        <a
+          href="/register"
+          routerLink="registration"
+          class="navigation-items link"
+          >Registration</a
+        >
+        <a href="/login" routerLink="log-in" class="navigation-items link"
+          >Log in</a
+        >
+    </div>
+
+    <div class="wrapper-boards">
+  
+        <!-- <a
+          href="/admin"
+          routerLink="admin"
+          class="navigation-items link"
+          
+          >Admin Board</a
+        > -->
+      
+
+      <a href="/user" routerLink="user" class="navigation-items link" *ngIf="showUserBoard"
+        >User Board</a
+      >
+    </div>
+  </div>
+  <div *ngIf="isLoggedIn" class="wrapper-logged-user">
+      <a href="/profile" class="logged-user username" routerLink="profile">{{
+        username
+      }}</a>
+      <a href class="logged-user logout" (click)="logout()">LogOut</a>
+  </div>
+  <div class="wrapper-social_media">
+    <a href="https://twitter.com/eco_industrial"
+      ><i class="fa fa-twitter"></i
+    ></a>
+    <a href="https://www.instagram.com/explore/tags/ecofriendly/?hl=uk"
+      ><i class="fa fa-instagram"></i
+    ></a>
+    <a href="https://www.facebook.com/groups/394078027387505/"
+      ><i class="fa fa-facebook"></i
+    ></a>
+  </div>
+
+</div>

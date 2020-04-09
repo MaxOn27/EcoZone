@@ -1,0 +1,169 @@
+.wrapper {
+  height: 55px;
+}
+
+
+
+.wrapper-menu {
+    display: inline-block;
+    width: calc(100% - 500px);
+    vertical-align: middle;
+}
+
+.wrapper-boards {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.wrapper-registration_login {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.wrapper-logged-user {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.wrapper-social_media {
+    display: inline-block;
+    position: relative;
+    right: 0;
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+.navigation-items {
+  display: inline-block;
+  margin: auto;
+  padding: 0 14px;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+}
+
+.eco {
+  color: #2fb368;
+  font-family: "Permanent Marker";
+  font-size: 30px;
+}
+
+.brand {
+  border-right: 2px solid rgba(255, 255, 255, 0.695);
+  font-family: "Baloo Chettan";
+  font-size: 30px;
+  letter-spacing: 5px;
+  padding-bottom: 10px;
+  color: white;
+  width: 16%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.brand:active,
+.brand:hover {
+  color: #2fb368;
+  transition: 1s;
+}
+
+.link {
+  font-family: "Baloo Chettan";
+  font-size: 22px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.link:active,
+.link:hover {
+  color: #e3f0ff;
+  transition: 0.8s;
+}
+
+.logged-user{
+  font-family: "Baloo Chettan";
+  font-size: 22px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.username {
+  margin: 0 60px 0 0;
+  color: #2fb368;
+}
+
+.fa.fa-twitter {
+    color: #00acee;
+    font-size: 30px;
+    padding: 0 11px;
+    border-right: #ffffffb1;
+}
+
+.fa.fa-instagram {
+  font-size: 30px;
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  /* background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
+   background-clip: text; 
+  -webkit-background-clip: text;
+  padding: 0 11px;
+  border-right: #ffffffb1;
+}
+
+.fa.fa-facebook {
+    color: #3b5998;
+    font-size: 30px;
+    padding: 0 11px;
+    
+}
+
+@media screen and (max-width: 40rem) {
+  .line {
+    width: 30px;
+    height: 3px;
+    background: blue;
+    margin: 5px;
+  }
+  .hamburger {
+    position: absolute;
+    top: 25px;
+    transform: translate(-5%, -50%);
+    margin-right: auto;
+    cursor: pointer;
+  }
+
+  .eco {
+    color: #2fb368;
+    font-family: "Permanent Marker";
+    font-size: 15px;
+  }
+
+  .brand {
+    font-family: "Baloo Chettan";
+    font-size: 15px;
+    padding-bottom: 5px;
+    color: white;
+    width: 16%;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .link {
+    font-family: "Baloo Chettan";
+    font-size: 12px;
+    color: white;
+  }
+
+  .logged-user{
+    font-family: "Baloo Chettan";
+    font-size: 12px;
+    color: white;
+  }
+
+  .username {
+    margin: 0 10px 0 0;
+    color: #2fb368;
+  }
+}
+
+

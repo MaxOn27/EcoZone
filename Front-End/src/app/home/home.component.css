@@ -1,0 +1,71 @@
+.home-wrapper {
+    width: 100%;
+    min-height: 920px;
+    max-width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 100px;
+    
+}
+
+.item {
+    /* border: 3px solid rgb(250, 252, 236); */
+    width: 350px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    box-shadow: -2px 5px 20px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    background-color: rgb(253, 253, 245);
+}
+
+@media(max-width: 40rem) {
+    .item {
+        width: 300px;
+        margin: 10px 0 10px 0;
+    } 
+}
+
+.wrapper {
+    width: 100%;
+    outline: none;
+}
+
+img {
+    width: 100%;
+}
+
+.wrapper-title {
+    margin: 25px 0;
+    text-align: center;
+    /* border-bottom: 1px solid black; */
+    
+}
+
+.title {
+    font-weight: 400;
+    font-size: 22px;
+    font-family: 'Baloo Chettan';
+}
+
+.wrapper-price {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.price {
+    /* width: 30%; */
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Baloo Chettan';
+    letter-spacing: 1px;
+    color: #2fb368;
+}
+
+.wrapper-pagination {
+    height: 70px;
+    text-align: center;
+}

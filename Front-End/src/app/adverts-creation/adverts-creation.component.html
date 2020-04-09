@@ -1,0 +1,88 @@
+<div class="main-wrapper">
+  <div class="wrapper" *ngIf="!submitted">
+    <form class="wrapper-form" [formGroup]="formAdvert" (ngSubmit)="onSubmit()">
+      <mat-form-field class="advert-creation-item">
+        <input
+          matInput
+          placeholder="Company"
+          placeholder="Title"
+          formControlName="title"
+        />
+        <mat-error *ngIf="formAdvert.get('title').hasError('required')">
+          Specify the title, please!
+        </mat-error>
+      </mat-form-field>
+      <div class="full-name">
+        <mat-form-field appearance="standard" class="advert-creation-item name">
+          <mat-label>Name</mat-label>
+
+          <input matInput placeholder="Enter your name" />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="standard" class="advert-creation-item name">
+          <mat-label>Surname</mat-label>
+          <input matInput placeholder="Enter your surname" /><!--formControlName="surnname"-->
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+      </div>
+      <mat-form-field class="advert-creation-item">
+        <input matInput placeholder="Specify the price" type="number" formControlName="price"/>
+        <span matPrefix>$&nbsp;</span>
+        <!-- <span matSuffix>.00</span> -->
+      </mat-form-field>
+      <div class="full-address">
+        <mat-form-field
+          appearance="standard"
+          class="advert-creation-item address"
+        >
+          <mat-label>City</mat-label>
+
+          <input
+            matInput
+            placeholder="Enter your city"
+            formControlName="city"
+          />
+          <mat-icon matSuffix>room</mat-icon>
+          <mat-error *ngIf="formAdvert.get('city').hasError('required')">
+            Point out the city, please!
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field
+          appearance="standard"
+          class="advert-creation-item address"
+        >
+          <mat-label>Address</mat-label>
+
+          <input
+            matInput
+            placeholder="Enter your address"
+            formControlName="address"
+          />
+          <mat-icon matSuffix>room</mat-icon>
+          <mat-error *ngIf="formAdvert.get('address').hasError('required')">
+            Point out the address, please!
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <mat-form-field class="advert-creation-item">
+        <textarea
+          matInput
+          placeholder="Description"
+          formControlName="description"
+        ></textarea>
+        <mat-error *ngIf="formAdvert.get('description').hasError('required')">
+          Describe the ad, please!
+        </mat-error>
+      </mat-form-field>
+      <button
+        mat-stroked-button
+        class="confirm-button"
+        type="submit"
+        [disabled]="formAdvert.invalid"
+        (click)="saveAdvert()"
+      >
+        Confirm
+      </button>
+    </form>
+  </div>
+</div>

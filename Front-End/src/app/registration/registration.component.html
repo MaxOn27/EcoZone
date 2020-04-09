@@ -1,0 +1,129 @@
+<div class="main-wrapper">
+  <div class="wrapper" *ngIf="!submitted">
+    <div class="wrapper-form">
+      <form
+      *ngIf="!isSuccessful"
+        [formGroup]="form"
+        class="registration-items"
+        
+        #f="ngForm"
+        novalidate
+      >
+        <mat-form-field appearance="standard" class="registration-item">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter your name"
+            formControlName="name"
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field appearance="standard" class="registration-item">
+          <mat-label>Surname</mat-label>
+          <input
+            matInput
+            placeholder="Enter your surname"
+            formControlName="surname"
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="standard" class="registration-item">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            placeholder="Enter your username"
+            formControlName="username"
+
+ 
+            
+          />
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="form.get('username').hasError('required')">
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="standard" class="registration-item">
+          <mat-label>E-mail</mat-label>
+          <input
+            matInput
+            type="email"
+            placeholder="Enter your e-mail"
+            formControlName="email"
+
+
+            
+          />
+          <mat-icon matSuffix> email</mat-icon>
+          <mat-error *ngIf="form.get('email').hasError('required')">
+            E-mail is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="registration-item">
+          <input
+            formControlName="password"
+            type="password"
+            matInput
+            placeholder="Enter the password"
+            [type]="hide ? 'password' : 'text'"
+
+            
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+          </button>
+          <mat-error
+            *ngIf="form.get('password').invalid && form.get('password').touched"
+          >
+            <span *ngIf="form.get('password').errors['required']">
+              Password is <strong>required</strong>
+            </span>
+            <span *ngIf="form.get('password').errors['passwordLengthError']">
+              Required more than {{ symbolsCount }} symbols!
+            </span>
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="registration-item">
+          <input
+            formControlName="confirm_password"
+            matInput
+            placeholder="Confirm the password"
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility" : "visibility_off" }}</mat-icon>
+          </button>
+        </mat-form-field>
+        <div>
+          <button
+            routerLink='/registered' 
+            mat-stroked-button
+            class="submit-button"
+            type="submit"
+            [disabled]="form.invalid"
+            (click)="saveUser()"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

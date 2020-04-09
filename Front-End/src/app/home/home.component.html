@@ -1,0 +1,35 @@
+<!-- <div class="container">
+  <header class="jumbotron">
+    <p>{{ content }}</p>
+  </header> -->
+<!-- </div> -->
+<div class="home-wrapper">
+  <div
+    *ngFor="
+      let advert of adverts | paginate: { itemsPerPage: 6, currentPage: p };
+      let i = index
+    "
+    id="{{ advert.id }}"
+  >
+    <div class="item">
+      <div class="wrapper" routerLink="/adverts/{{ advert.id }}">
+        <div>
+          <img
+            src="{{advert.photoURL}}"
+            alt="image"
+          />
+        </div>
+        <div class="wrapper-title">
+          <p class="title">{{ advert.title }}</p>
+        </div>
+        <div class="wrapper-price">
+          <span class="price"> ${{ advert.price }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper-pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
